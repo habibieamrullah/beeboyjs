@@ -113,6 +113,11 @@ function bbLoadElements(){
 			var newFontsize = elProp.fontsize * bbMagicY;
 			var newPadding = elProp.padding * bbMagicY;
 			
+			if(elProp.scaletype = "scaletofitV"){
+				newFontsize = elProp.fontsize * bbMagicX;
+				newPadding = elProp.padding * bbMagicX;
+			}
+			
 			bbSetPivot(this, elProp, newx, newy, newWidth, newHeight);
 
 			$(this).css({ 
