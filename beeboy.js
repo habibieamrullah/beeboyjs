@@ -7,8 +7,7 @@ var bbRefScreen = {
 	maxWidth : 0,
 };
 
-var bbMagicX = innerHeight / bbRefScreen.height;
-var bbMagicY = innerWidth / bbRefScreen.width;
+var bbMagicX, bbMagicY;
 
 function bbSwapRefScreenWH(){
 	if(innerWidth > innerHeight){
@@ -34,6 +33,10 @@ function bbSwapRSWH(){
 
 //Loading elements
 function bbLoadElements(){
+	
+	bbMagicX = innerHeight / bbRefScreen.height;
+	bbMagicY = innerWidth / bbRefScreen.width;
+	
 	$(".bb").each(function(){
 		
 		//get properties
@@ -42,7 +45,7 @@ function bbLoadElements(){
 			width : $(this).attr("data-width"),
 			height : $(this).attr("data-height"),
 			x : $(this).attr("data-x"),
-			y : parseFloat($(this).attr("data-y")),
+			y : $(this).attr("data-y"),
 			pivotx : $(this).attr("data-pivotx"),
 			pivoty : $(this).attr("data-pivoty"),
 			scaletype : $(this).attr("data-scaletype"),
@@ -71,7 +74,7 @@ function bbLoadElements(){
 		if(elProp.x == undefined){
 			elProp.x = 0;
 		}
-		
+				
 		if(elProp.y == undefined){
 			elProp.y = 0;
 		}
