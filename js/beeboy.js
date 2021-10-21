@@ -34,6 +34,9 @@ function bbSwapRSWH(){
 //Loading elements
 function bbLoadElements(){
 	
+	$(".bb").css({ "position" : "fixed" });
+	$(".bbTextField").css({ "box-sizing" : "border-box", "width" : "100%" });
+	
 	bbMagicX = innerHeight / bbRefScreen.height;
 	bbMagicY = innerWidth / bbRefScreen.width;
 	
