@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BeeboyJS</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/beeboy.js"></script>
+		
+		<style>
+			body{
+				background-color: white;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div 
+			class="bb" 
+			data-scaletype="scaletofitH" 
+			data-fontsize="21"
+			data-width="620" 
+			data-height="354" 
+			data-anchor="middle" 
+			data-pivotx="0.5"
+			data-pivoty="0.5"
+			data-x="0"
+			data-y="0"
+			data-image="images/mainan.jpg">
+		</div>
+		
+		<script>
+			
+			bbRefScreen = {
+				width : 1280,
+				height : 720,
+			};
+			
+			$(document).ready(function(){
+				bbLoadElements();
+			});
+			
+			$(window).resize(function(){
+				bbLoadElements();
+			});
+			
+		</script>
+		
+	</body>
+</html>
