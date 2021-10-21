@@ -9,9 +9,10 @@
 	</head>
 	<body>
 	
-		<div class="bb" data-scaletype="scaletofitH" data-width="256" data-height="256" data-anchor="middle" data-x="0" data-y="0" style="display: table;">
+		<div class="bb" data-scaletype="scaletofitH" data-width="256" data-height="256" data-anchor="middle" style="display: table; background-color: blue; color: white;">
 			<div style="display: table-cell; vertical-align: middle; text-align: center;">
 				<p>Hello Beeboy!</p>
+				<p>Get it now from <a href="https://github.com/habibieamrullah/beeboyjs">GitHub</a></p>
 			</div>
 		</div>
 		
@@ -23,6 +24,10 @@
 			};
 			
 			$(document).ready(function(){
+				bbLoadElements();
+			});
+			
+			$(window).resize(function(){
 				bbLoadElements();
 			});
 			
