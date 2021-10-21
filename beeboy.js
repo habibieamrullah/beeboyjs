@@ -1,7 +1,7 @@
 //Screen size reference
 var bbRefScreen = {
-	width : 1920,
-	height : 1080,
+	width : 1280,
+	height : 720,
 	maxAspectratio : 1.95,
 	ultraWideAspectratio : 2.02157,
 	maxWidth : 0,
@@ -23,7 +23,7 @@ function bbSwapRefScreenWH(){
 }
 
 
-
+//In case you need to swap width and height ?
 function bbSwapRSWH(){
 	var tmpw = bbRefScreen.height;
 	var tmph = bbRefScreen.width;
