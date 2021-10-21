@@ -289,6 +289,11 @@ function bbSetPivot(elm, elProp, newx, newy, newWidth, newHeight){
 			"left" : (newx - newWidth*elProp.pivotx) + "px", 
 			"bottom" : (0 - (newHeight*elProp.pivoty)) + (elProp.y * bbMagicY) + "px",
 		});
+	}else if(elProp.anchor == "bottomright"){
+		$(elm).css({ 
+			"right" : (newx - newWidth*elProp.pivotx) + "px", 
+			"bottom" : (0 - (newHeight*elProp.pivoty)) + (elProp.y * bbMagicY) + "px",
+		});
 	}else if(elProp.anchor == "bottommiddle"){
 		$(elm).css({ 
 			"left" : (newx - newWidth*elProp.pivotx) + (innerWidth/2) + "px", 
