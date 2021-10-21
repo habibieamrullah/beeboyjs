@@ -3,9 +3,10 @@
 
 	<head>
 	
-		<title>BeeboyJS</title>
+		<title>BeeboyJS - Design it once see it same on all devices!</title>
 		<script src="js/jquery.min.js"></script>
-		
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
 		<style>
 			
 			body{
@@ -22,14 +23,24 @@
 	</head>
 	<body>
 	
-		<div style="width: 100%; height: 600px;">
-			<iframe src="middle.html" style="width: 100%; height: 100%; border: none;"></iframe>
-		</div>
+		<h1>BeeboyJS</h1>
+		<h2>A tiny JavaScript library that enable you to design your website once and see it same on all devices with any screen sizes</h2>
 		
-		
-		<p align="middle">Get it now from <a href="https://github.com/habibieamrullah/beeboyjs" target="_blank">GitHub</a></p>
-		
+		<h3>What is BeeboyJS</h3>
+		<p>BeeboyJS is a small JavaScript file that help you place your website elements "once" on a web browser screen according to their anchor points (top, left, middle, bottom and so on) with a given width and height, then when you run it on any screen sizes and aspect ratios you will not worry about layout misplacements because your HTML elements's properties are being recalculated to match any screen sizes.</p>
+		<p>For an example, when you make a div box in 512 by 512 pixels at the middle of web browser screen, when you resize the browser window or whenever you see it o many different devices with different screen sizes you will see your div box porportion and size ratio according to the screen being recalculated and resized. Not only the size of the div, but also texts and images you are working with!</p>
 	
+		<p>Resize this iframe below to see how it works:</p>
+		<div id="resizable" style="width: 700px; height: 400px; background-color: blue; padding: 25px;">
+			<iframe src="middle.html" style="border: none; overflow: hidden; width: 100%; height: 100%;"></iframe>
+		</div>
+		<h3>How to use it?</h3>
+		<p>Get beeboy.js from <a href="https://github.com/habibieamrullah/beeboyjs" target="_blank">GitHub</a> and make sure you are using jQuery. Then check out these tutorials from my YouTube channel.</p>
+	
+		<script>
+			$( "#resizable" ).resizable();
+		</script>
+		
 	</body>
 	
 </html>
