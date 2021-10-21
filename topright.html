@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+		<title>BeeboyJS</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/beeboy.js"></script>
+		
+		<style>
+			body{
+				background-color: white;
+			}
+			a{
+				text-decoration: underline;
+				color: inherit;
+			}
+		</style>
+		
+	</head>
+	<body>
+	
+
+		<div 
+		
+			class="bb" 
+			data-scaletype="scaletofitH" 
+			data-fontsize="21"
+			data-width="256" 
+			data-height="256" 
+			data-anchor="topright" 
+			data-borderradius="20"
+			data-padding="20"
+			data-pivotx="0"
+			data-pivoty="0"
+			data-x="0"
+			data-y="0"
+			style="display: table; background-color: red; color: white;">
+			
+			<div style="display: table-cell; vertical-align: middle; text-align: center;">
+				<p>I'm sticking on the top right corner</p>
+			</div>
+			
+		</div>
+		
+		<script>
+			
+			bbRefScreen = {
+				width : 1280,
+				height : 720,
+			};
+			
+			$(document).ready(function(){
+				bbLoadElements();
+			});
+			
+			$(window).resize(function(){
+				bbLoadElements();
+			});
+			
+		</script>
+	</body>
+	
+</html>

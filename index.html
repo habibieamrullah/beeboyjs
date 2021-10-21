@@ -24,6 +24,10 @@
 				text-decoration: underline;
 				color: inherit;
 			}
+			
+			.exm{
+				margin-right: 10px; margin-bottom: 10px; display: inline-block; background-color: blue; color: white; padding: 10px; cursor: pointer;
+			}
 		</style>
 		
 	</head>
@@ -35,16 +39,31 @@
 		<h3>What is BeeboyJS</h3>
 		<p>BeeboyJS is a small JavaScript file that help you place your website elements "once" on a web browser screen according to their anchor points (top, left, middle, bottom and so on) with a given width and height and x and y coordinates, then when you run it on any screen sizes and aspect ratios you will not worry about layout misplacements because your HTML elements's properties are being recalculated to match any screen sizes.</p>
 		<p>For an example, when you make a div box in 512 by 512 pixels at the middle of web browser screen, when you resize the browser window or whenever you see it o many different devices with different screen sizes you will see your div box porportion and size ratio according to the screen being recalculated and resized. Not only the size of the div, but also texts and images you are working with!</p>
+		
+		<h2>Examples</h2>
+		<h3>Horizontal Scale To Fit</h3>
+		<div class="exm" onclick="openexample('middle')">Middle of the screen</div>
+		<div class="exm" onclick="openexample('topleft')">Top Left Corner</div>
+		<div class="exm" onclick="openexample('topmiddle')">Top Middle</div>
+		<div class="exm" onclick="openexample('topright')">Top Right Corner</div>
 	
 		<p>Resize this iframe below to see how it works:</p>
 		<div id="resizable" style="width: 700px; height: 400px; background-color: blue; padding: 25px;">
-			<iframe src="middle.html" style="border: none; overflow: hidden; width: 100%; height: 100%;"></iframe>
+			<iframe id="myiframe" src="middle.html" style="border: none; overflow: hidden; width: 100%; height: 100%;"></iframe>
 		</div>
+		<p>Click <a href="" id="exsource" target="_blank">here</a> to see the source of this example.</p>
 		<h3>How to use it?</h3>
 		<p>Get beeboy.js from <a href="https://github.com/habibieamrullah/beeboyjs" target="_blank">GitHub</a> and make sure you are using jQuery. Then check out any examples in this page and view the source. For more tutorials you can check out my <a href="https://www.youtube.com/ThirteeNov/" target="_blank">YouTube channel</a>.</p>
 	
 		<script>
 			$( "#resizable" ).resizable();
+			
+			function openexample(id){
+				$("#myiframe").attr("src", id + ".html");
+				$("#exsource").attr("href", "https://github.com/habibieamrullah/beeboyjs/blob/gh-pages/" + id + ".html");
+			}
+			
+			openexample("middle");
 		</script>
 		
 	</body>
