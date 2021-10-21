@@ -113,11 +113,6 @@ function bbLoadElements(){
 			var newFontsize = elProp.fontsize * bbMagicY;
 			var newPadding = elProp.padding * bbMagicY;
 			
-			if(elProp.scaletype = "scaletofitV"){
-				newFontsize = elProp.fontsize * bbMagicX;
-				newPadding = elProp.padding * bbMagicX;
-			}
-			
 			bbSetPivot(this, elProp, newx, newy, newWidth, newHeight);
 
 			$(this).css({ 
@@ -138,9 +133,14 @@ function bbLoadElements(){
 			var newx = innerWidth * (elProp.x/bbRefScreen.width);
 			var newy = newx * (elProp.y/elProp.x);
 			
+			var newFontsize = elProp.fontsize * bbMagicX;
+			var newPadding = elProp.padding * bbMagicX;
+			
 			$(this).css({ 
 				"width" : newWidth + "px", 
 				"height" : newHeight + "px",
+				"font-size" : newFontsize + "px",
+				"padding" : newPadding + "px",
 			});
 			
 			bbSetPivot(this, elProp, newx, newy, newWidth, newHeight);
@@ -159,6 +159,7 @@ function bbLoadElements(){
 			
 			var newFontsize = elProp.fontsize * (innerHeight/bbRefScreen.height);
 			var newPadding = elProp.padding * (innerHeight/bbRefScreen.height);
+			
 			
 			$(this).css({ 
 				"font-size" : newFontsize + "px",

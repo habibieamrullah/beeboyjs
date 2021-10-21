@@ -74,7 +74,8 @@
 		<p>For an example, when you make a div box in 512 by 512 pixels at the middle of web browser screen, when you resize the browser window or whenever you see it o many different devices with different screen sizes you will see your div box porportion and size ratio according to the screen being recalculated and resized. Not only the size of the div, but also texts and images you are working with!</p>
 		
 		<h2>Examples</h2>
-		<!--<h3>Horizontal Scale To Fit</h3>-->
+		
+		<h3>Basics</h3>
 		<div class="exm" onclick="openexample('middle')">Middle of the screen</div>
 		<div class="exm" onclick="openexample('topleft')">Top Left Corner</div>
 		<div class="exm" onclick="openexample('topmiddle')">Top Middle</div>
@@ -82,6 +83,12 @@
 		<div class="exm" onclick="openexample('bottomleft')">Bottom Left Corner</div>
 		<div class="exm" onclick="openexample('bottommiddle')">Bottom Middle</div>
 		<div class="exm" onclick="openexample('bottomright')">Bottom Right</div>
+		
+		<h3>Horizontal Scale vs Vertical Scale</h3>
+		<div class="exm" onclick="openexample('scaletofith')">Scale To Fit - Horizontally</div>
+		<div class="exm" onclick="openexample('scaletofitv')">Scale To Fit - Vertically</div>
+		
+		<h3>Working with images</h3>
 		<div class="exm" onclick="openexample('image')">Showing an Image</div>
 		
 		
@@ -106,12 +113,18 @@
 		<script>
 			$( "#resizable" ).resizable();
 			
-			function openexample(id){
+			function openexample(id, noscroll){
 				$("#myiframe").attr("src", id + ".html");
 				$("#exsource").attr("href", "https://github.com/habibieamrullah/beeboyjs/blob/gh-pages/" + id + ".html");
+				
+				if(noscroll == undefined || !noscroll){
+					$('html, body').animate({
+						scrollTop: $("#myiframe").offset().top-50
+					}, 500);
+				}
 			}
 			
-			openexample("middle");
+			openexample("middle", true);
 		</script>
 		
 	</body>
