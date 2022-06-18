@@ -90,8 +90,6 @@ function bbLoadElements(){
 		
 		
 		//Scale Modes 
-		
-		
 		if(elProp.scaletype == "scaleonly"){
 			var newWidth = innerWidth * (elProp.width/bbRefScreen.width);
 			var newHeight = newWidth * (elProp.height/elProp.width);
@@ -108,7 +106,7 @@ function bbLoadElements(){
 			var newWidth = innerWidth * (elProp.width/bbRefScreen.width);
 			var newHeight = newWidth * (elProp.height/elProp.width);
 			var newx = innerWidth * (elProp.x/bbRefScreen.width);
-			var newy = newx * (elProp.y/elProp.x);
+			var newy = innerHeight * (elProp.y/bbRefScreen.height);
 
 			var newFontsize = elProp.fontsize * bbMagicY;
 			var newPadding = elProp.padding * bbMagicY;
@@ -263,8 +261,13 @@ function bbSetPivot(elm, elProp, newx, newy, newWidth, newHeight){
 	if(elProp.anchor == "topleft"){
 		$(elm).css({ 
 			"left" : (newx - newWidth*elProp.pivotx) + "px", 
-			"top" :  (newy - newHeight*elProp.pivoty) + "px",
+			//"top" :  (newy + newHeight*elProp.pivoty) + "px",
+			"top" :  newy + "px",
+			
+			//"left" : (newx - newWidth*elProp.pivotx) + (innerWidth/2) + "px", 
+			//"bottom" : (0 - (newHeight*elProp.pivoty)) + (elProp.y * bbMagicX) + "px",
 		});
+		
 	}else if(elProp.anchor == "topright"){
 		$(elm).css({ 
 			"right" : (newx - newWidth*elProp.pivotx) + "px", 
