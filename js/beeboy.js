@@ -49,6 +49,8 @@ function bbLoadElements(){
 			padding : $(this).attr("data-padding"),
 			margin : $(this).attr("data-margin"),
 			borderradius : $(this).attr("data-borderradius"),
+			width : $(this).attr("data-width"),
+			height : $(this).attr("data-height"),
 		}
 		
 		//Horizontal scale to fit; calculate only when browser is resized horizontally
@@ -58,11 +60,15 @@ function bbLoadElements(){
 			var newPadding = elProp.padding * bbMagicY;
 			var newMargin = elProp.margin * bbMagicY;
 			var newBorderRadius = elProp.borderradius * bbMagicY;
+			var newWidth = elProp.width * bbMagicY;
+			var newHeight = elProp.height * bbMagicY;
 
 			$(this).css({ 
 				"font-size" : newFontsize + "px",
 				"padding" : newPadding + "px",
 				"margin" : newMargin + "px",
+				"width" : newWidth + "px",
+				"height" : newHeight + "px",
 				"border-radius" : newBorderRadius + "px",
 			});
 		}
@@ -75,11 +81,15 @@ function bbLoadElements(){
 			var newPadding = elProp.padding * bbMagicX;
 			var newMargin = elProp.margin * bbMagicX;
 			var newBorderRadius = elProp.borderradius * bbMagicX;
+			var newWidth = elProp.width * bbMagicX;
+			var newHeight = elProp.height * bbMagicX;
 			
 			$(this).css({ 
 				"font-size" : newFontsize + "px",
 				"padding" : newPadding + "px",
 				"margin" : newMargin + "px",
+				"width" : newWidth + "px",
+				"height" : newHeight + "px",
 				"border-radius" : newBorderRadius + "px",
 			});
 			
