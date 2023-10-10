@@ -40,6 +40,55 @@ function bbLoadElements(){
 	bbMagicX = innerHeight / bbRefScreen.height;
 	bbMagicY = innerWidth / bbRefScreen.width;
 	
+	//.bbs is non floating elements (non position fixed elements)
+	$(".bbs").each(function(){
+		//get properties
+		var elProp = {
+			scaletype : $(this).attr("data-scaletype"),		
+			fontsize : $(this).attr("data-fontsize"),
+			padding : $(this).attr("data-padding"),
+			margin : $(this).attr("data-margin"),
+			borderradius : $(this).attr("data-borderradius"),
+		}
+		
+		//Horizontal scale to fit; calculate only when browser is resized horizontally
+		if(elProp.scaletype == "scaletofitH"){
+
+			var newFontsize = elProp.fontsize * bbMagicY;
+			var newPadding = elProp.padding * bbMagicY;
+			var newMargin = elProp.margin * bbMagicY;
+			var newBorderRadius = elProp.borderradius * bbMagicY;
+
+			$(this).css({ 
+				"font-size" : newFontsize + "px",
+				"padding" : newPadding + "px",
+				"margin" : newMargin + "px",
+				"border-radius" : newBorderRadius + "px",
+			});
+		}
+		
+		
+		//Vertical scale to fit; calculate only when browser is resized vertically
+		if(elProp.scaletype == "scaletofitV"){
+
+			var newFontsize = elProp.fontsize * bbMagicX;
+			var newPadding = elProp.padding * bbMagicX;
+			var newMargin = elProp.margin * bbMagicX;
+			var newBorderRadius = elProp.borderradius * bbMagicX;
+			
+			$(this).css({ 
+				"font-size" : newFontsize + "px",
+				"padding" : newPadding + "px",
+				"margin" : newMargin + "px",
+				"border-radius" : newBorderRadius + "px",
+			});
+			
+		}
+		
+		
+	});
+	
+	//.bb is fixed floating elements
 	$(".bb").each(function(){
 		
 		//get properties
